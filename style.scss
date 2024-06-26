@@ -1,0 +1,159 @@
+.form-outer {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #c8cff4 0%, #8046fc 100%);
+  form {
+    padding: 20px 20px 20px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.143);
+    background: radial-gradient(circle, #8046fc36 00%, #c8cff43a 100%);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 2px solid #3c029a;
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      height: 120px;
+      width: 120px;
+      background: rgba(255, 255, 255, 0.807);
+      border-radius: 100% 0 ;
+      left: -120px;
+      z-index: 9;
+      top: 30px;
+    }
+    &:after{
+      position: absolute;
+      content: "";
+      top: -2px;
+      bottom: -2px;
+      right: calc(100% - 14px);
+      width: 170px;
+      background: #8857fc;
+      border-radius: 180px 0 0 180px;
+      border: 2px solid #3c029a;
+    }
+  }
+  .form-inner{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    transition: all 2s;
+    &::before{
+      position: absolute;
+      content: "";
+      bottom: 0px;
+      height: 100px;
+      width: 100px;
+      background-color: #000;
+      border-radius: 100%;
+      left: -130px;
+      border: 2px solid #3c029a;
+    }
+    &.addAnimation{
+      transform: translateX(-100%);
+      .btn{
+        animation: rotateTyre 2s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes rotateTyre {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+.creak-img {
+  position: absolute;
+  bottom: 3%;
+  left: 2%;
+  height: 60%;
+  width: auto;
+}
+
+.btn {
+  border-radius: 24px;
+  border: none;
+  min-width: 90px;
+  &:focus{
+    box-shadow: none;
+  }
+  &.btn-primary {
+    background: linear-gradient(to right, #4776e6 0%, #3c029a 51%, #4776e6 100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    &:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &.btn-secondary {
+    background: linear-gradient(to right, #ffb75e 0%, #ed8f03 51%, #ffb75e 100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.error,
+.error-email {
+  color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12px;
+}
+
+.form-control,
+.form-select,
+.form-check-input,
+.form-check-input {
+  &:focus {
+    box-shadow: none;
+  }
+}
+.form-control, .form-select {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  &:focus {
+    background-color: transparent;
+    border-color: white;
+    color: #fff;
+  }
+  &::-internal-autofill-selected {
+    background-color: transparent !important;
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 0 30px;
+  .btn {
+    margin-bottom: -70px;
+    height: 100px;
+    width: 100px;
+    line-height: 90px;
+    border-radius: 100%;
+    font-size: 18px;
+    border: 2px solid #3c029a;
+  }
+}
